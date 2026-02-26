@@ -1,0 +1,57 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Make gradlew executable
+        run: chmod +x gradlew
+
+      - name: Build Android release APK
+        run: ./gradlew assembleRelease
+
+      - name: Prepare artifacts
+        run: |
+          VERSION="${GITHUB_REF_NAME}"
+          mkdir -p dist
+
+          APK_PATH="app/build/outputs/apk/release/app-release.apk"
+          if [ ! -f "$APK_PATH" ]; then
+            echo "APK not found at $APK_PATH"
+            exit 1
+          fi
+          cp "$APK_PATH" "dist/DriveDroid-${VERSION}.apk"
+
+          mkdir -p dist/server
+          cp server/server.py server/requirements.txt server/run_server.sh dist/server/
+          cd dist
+          zip -r "DriveDroidServer-${VERSION}.zip" server
+          cd ..
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/DriveDroid-*.apk
+            dist/DriveDroidServer-*.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+

@@ -1,0 +1,99 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="256"
+    android:viewportHeight="256">
+
+    <!-- Background rounded square -->
+    <path
+        android:fillColor="#1976D2"
+        android:pathData="M64,8h128c30.9,0 56,25.1 56,56v128c0,30.9 -25.1,56 -56,56H64C33.1,248 8,222.9 8,192V64C8,33.1 33.1,8 64,8z" />
+
+    <!-- Dark background circle -->
+    <path
+        android:fillColor="#0D1117"
+        android:pathData="M128,38a90,90 0 1,0 0,180a90,90 0 1,0 0,-180z" />
+
+    <!-- Outer ring -->
+    <path
+        android:strokeColor="#E3F2FD"
+        android:strokeWidth="14"
+        android:fillColor="@android:color/transparent"
+        android:pathData="M128,46a82,82 0 1,0 0,164a82,82 0 1,0 0,-164z" />
+
+    <!-- Left grip bump -->
+    <path
+        android:fillColor="#CFD8DC"
+        android:fillAlpha="0.85"
+        android:pathData="M48,110a10,18 0 1,0 0,36a10,18 0 1,0 0,-36z" />
+
+    <!-- Right grip bump -->
+    <path
+        android:fillColor="#CFD8DC"
+        android:fillAlpha="0.85"
+        android:pathData="M208,110a10,18 0 1,0 0,36a10,18 0 1,0 0,-36z" />
+
+    <!-- Spoke: Top-left (128,128 to 82,72) -->
+    <path
+        android:strokeColor="#E3F2FD"
+        android:strokeWidth="12"
+        android:strokeLineCap="round"
+        android:fillColor="@android:color/transparent"
+        android:pathData="M128,128 L82,72" />
+
+    <!-- Spoke: Top-right (128,128 to 174,72) -->
+    <path
+        android:strokeColor="#E3F2FD"
+        android:strokeWidth="12"
+        android:strokeLineCap="round"
+        android:fillColor="@android:color/transparent"
+        android:pathData="M128,128 L174,72" />
+
+    <!-- Spoke: Bottom (128,128 to 128,208) -->
+    <path
+        android:strokeColor="#E3F2FD"
+        android:strokeWidth="12"
+        android:strokeLineCap="round"
+        android:fillColor="@android:color/transparent"
+        android:pathData="M128,128 L128,208" />
+
+    <!-- Junction cap: top-left -->
+    <path
+        android:fillColor="#E3F2FD"
+        android:pathData="M82,64a8,8 0 1,0 0,16a8,8 0 1,0 0,-16z" />
+
+    <!-- Junction cap: top-right -->
+    <path
+        android:fillColor="#E3F2FD"
+        android:pathData="M174,64a8,8 0 1,0 0,16a8,8 0 1,0 0,-16z" />
+
+    <!-- Junction cap: bottom -->
+    <path
+        android:fillColor="#E3F2FD"
+        android:pathData="M128,200a8,8 0 1,0 0,16a8,8 0 1,0 0,-16z" />
+
+    <!-- Center hub outer -->
+    <path
+        android:fillColor="#E3F2FD"
+        android:pathData="M128,106a22,22 0 1,0 0,44a22,22 0 1,0 0,-44z" />
+
+    <!-- Center hub mid -->
+    <path
+        android:fillColor="#90CAF9"
+        android:pathData="M128,115a13,13 0 1,0 0,26a13,13 0 1,0 0,-26z" />
+
+    <!-- Center hub inner dot -->
+    <path
+        android:fillColor="#1976D2"
+        android:pathData="M128,122a6,6 0 1,0 0,12a6,6 0 1,0 0,-12z" />
+
+    <!-- Highlight arc on outer ring -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:fillColor="@android:color/transparent"
+        android:strokeAlpha="0.35"
+        android:pathData="M60,88 A78,78 0 0,1 196,88" />
+
+</vector>

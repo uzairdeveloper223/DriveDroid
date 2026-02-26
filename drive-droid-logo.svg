@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#64B5F6"/>
+      <stop offset="100%" stop-color="#1976D2"/>
+    </linearGradient>
+    <linearGradient id="wheelGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#B0BEC5"/>
+    </linearGradient>
+  </defs>
+
+  <!-- App background rounded rect -->
+  <rect x="8" y="8" width="240" height="240" rx="56" ry="56" fill="url(#bg)"/>
+
+  <!-- Dark background circle -->
+  <circle cx="128" cy="128" r="90" fill="#0D1117"/>
+
+  <!-- Outer ring (thick) -->
+  <circle cx="128" cy="128" r="82" fill="none" stroke="url(#wheelGrad)" stroke-width="14"/>
+
+  <!-- Left grip bump -->
+  <ellipse cx="48" cy="128" rx="10" ry="18" fill="#CFD8DC" opacity="0.85"/>
+  <!-- Right grip bump -->
+  <ellipse cx="208" cy="128" rx="10" ry="18" fill="#CFD8DC" opacity="0.85"/>
+
+  <!-- Spoke: Top-left -->
+  <path d="M128 128 L82 72" stroke="#E3F2FD" stroke-width="12" stroke-linecap="round"/>
+  <!-- Spoke: Top-right -->
+  <path d="M128 128 L174 72" stroke="#E3F2FD" stroke-width="12" stroke-linecap="round"/>
+  <!-- Spoke: Bottom -->
+  <path d="M128 128 L128 208" stroke="#E3F2FD" stroke-width="12" stroke-linecap="round"/>
+
+  <!-- Spoke cover at ring junction top-left -->
+  <circle cx="82" cy="72" r="8" fill="#E3F2FD"/>
+  <!-- Spoke cover at ring junction top-right -->
+  <circle cx="174" cy="72" r="8" fill="#E3F2FD"/>
+  <!-- Spoke cover at ring junction bottom -->
+  <circle cx="128" cy="208" r="8" fill="#E3F2FD"/>
+
+  <!-- Center hub outer -->
+  <circle cx="128" cy="128" r="22" fill="#E3F2FD"/>
+  <!-- Center hub inner detail -->
+  <circle cx="128" cy="128" r="13" fill="#90CAF9"/>
+  <circle cx="128" cy="128" r="6" fill="#1976D2"/>
+
+  <!-- Highlight arc on outer ring -->
+  <path d="M60 88 A78 78 0 0 1 196 88" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" opacity="0.35"/>
+</svg>
